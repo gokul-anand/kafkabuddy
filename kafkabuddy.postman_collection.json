@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "046b9653-cf6b-46c0-a9e4-d5e9427dfe29",
+		"name": "kafkabuddy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "publishMessage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "custom-testing-header",
+						"value": "123",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key1\": \"test123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:29092/kafkabuddy/publishMessage?topic=sample",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "29092",
+					"path": [
+						"kafkabuddy",
+						"publishMessage"
+					],
+					"query": [
+						{
+							"key": "topic",
+							"value": "sample"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readMessage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:29092/kafkabuddy/readMessage?topic=sample",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "29092",
+					"path": [
+						"kafkabuddy",
+						"readMessage"
+					],
+					"query": [
+						{
+							"key": "topic",
+							"value": "sample"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
